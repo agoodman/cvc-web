@@ -2,8 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+* { border: 0; margin: 0; padding: 0; }
 body { width: 960px; margin: 20px auto; }
 section { 
 	width: 100%; 
-	.chicken, .cobra { width: 30%; }
+	clear: both;
+	.choice {
+		.chicken, .cobra { float: left; }
+		.chicken { left: 20px; }
+		.cobra { float: right; }
+	}
+	.reason { 
+		clear: both; 
+		textarea { height: 50px; width: 90%; float: left; }
+		input[type='submit'] { height: 50px; width: 10%; float: left; }
+	}
 }
+section.bar {
+	height: 25px;
+	.chicken, .cobra { 
+		width: 50%; 
+		height: 100%; 
+		float: left; 
+		div { 
+			background: black; height: 20px; 
+			span { color: white; margin: 2px; display: inline-block; }
+		}
+	}
+}
+section.stat {
+	.chicken, .cobra { width: 40%; height: 200px; float: left; }
+	.score { width: 20%; height: 200px; float: left; }
+}
+footer {
+	clear: both;
+	text-align: center; 
+	margin-top: 50px;
+	p { color: black; }
+	li { margin: 50px; float: left; }
+}
+footer:after { content: '.'; visibility: hidden; clear: both; }

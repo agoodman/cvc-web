@@ -1,17 +1,34 @@
-%section &nbsp;
-%section
-	.chicken &nbsp;
+%section.bar
+	.chicken
+		%div
+			%span= number_to_percentage(@chicken_perc, precision: 0)
+	.cobra
+		%div
+			%span= number_to_percentage(@cobra_perc, precision: 0)
+%section.stat
+	.chicken picture of chicken
 	.score #{number_to_percentage(@chicken_perc, precision: 0)} / #{number_to_percentage(@cobra_perc, precision: 0)}
-	.cobra &nbsp;
+	.cobra picture of cobra
 %section
 	= form_for Vote.new do |f|
 		- if user_signed_in?
 			= f.hidden_field :user_id, value: current_user.id
 		.choice
-			%label{for: 'chicken'} Chicken
-			= f.check_box :chicken
-			%label{for: 'cobra'} Cobra
-			= f.check_box :cobra
+			.chicken
+				%label{for: 'chicken'} Chicken
+				= f.check_box :chicken
+			.cobra
+				%label{for: 'cobra'} Cobra
+				= f.check_box :cobra
 		.reason
 			= f.text_area :reason, placeholder: 'Reason'
 			= f.submit "Submit"
+
+%footer
+	%span Carelessly assembled by
+	%ul
+		%li= link_to 'migrant studios', 'http://migrantstudios.com'
+		%li= link_to 'madera labs', 'http://maderalabs.com'
+		%li= link_to 'mega', 'http://megainc.com'
+
+= render partial: 'bar'
