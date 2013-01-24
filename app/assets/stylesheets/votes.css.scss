@@ -4,6 +4,7 @@
 
 * { border: 0; margin: 0; padding: 0; }
 body { width: 960px; margin: 20px auto; }
+header { width: 100%; text-align: center; margin-bottom: 50px; }
 section { 
 	width: 100%; 
 	clear: both;
@@ -19,7 +20,7 @@ section {
 	}
 }
 section.bar {
-	height: 25px;
+	height: 50px;
 	.chicken, .cobra { 
 		width: 50%; 
 		height: 100%; 
@@ -31,7 +32,12 @@ section.bar {
 	}
 }
 section.stat {
-	.chicken, .cobra { width: 40%; height: 200px; float: left; }
+	.chicken, .cobra { 
+		width: 40%; 
+		height: 200px; 
+		float: left; 
+		img { width: 100%; height: 100%; }
+	}
 	.score { width: 20%; height: 200px; float: left; }
 }
 footer {
@@ -42,3 +48,4 @@ footer {
 	li { margin: 50px; float: left; }
 }
 footer:after { content: '.'; visibility: hidden; clear: both; }
+img { border: none; }

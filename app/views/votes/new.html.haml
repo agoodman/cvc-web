@@ -1,14 +1,26 @@
+%header CHICKEN VS COBRA
 %section.bar
 	.chicken
+		%span HEALTH
 		%div
 			%span= number_to_percentage(@chicken_perc, precision: 0)
 	.cobra
+		%span HEALTH
 		%div
 			%span= number_to_percentage(@cobra_perc, precision: 0)
 %section.stat
-	.chicken picture of chicken
-	.score #{number_to_percentage(@chicken_perc, precision: 0)} / #{number_to_percentage(@cobra_perc, precision: 0)}
-	.cobra picture of cobra
+	.chicken
+		%img{alt: 'picture of chicken'}
+	.score
+		%span BATTLE STATS
+		.chicken
+			= number_to_percentage(@chicken_perc, precision: 0)
+			VOTES: #{@chicken_votes}
+		.cobra
+			= number_to_percentage(@cobra_perc, precision: 0)
+			VOTES: #{@cobra_votes}
+	.cobra 
+		%img{alt: 'picture of cobra'}
 %section
 	= form_for Vote.new do |f|
 		- if user_signed_in?
