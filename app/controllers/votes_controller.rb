@@ -9,6 +9,11 @@ class VotesController < ApplicationController
   end
   
   def new
+    @chicken_votes = Vote.valid.chicken.count
+    @cobra_votes = Vote.valid.cobra.count
+    @total_votes = Vote.valid.count
+    @chicken_perc = 100.0 * @chicken_votes.to_f / @total_votes.to_f rescue 0
+    @cobra_perc = 100.0 * @cobra_votes.to_f / @total_votes.to_f rescue 0
   end
   
   def claim
