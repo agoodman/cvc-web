@@ -1,0 +1,10 @@
+= form_for Vote.new do |f|
+	- if user_signed_in?
+		= f.hidden_field :user_id, value: current_user.id
+	%label{for: 'chicken'} Chicken
+	= f.check_box :chicken
+	%label{for: 'cobra'} Cobra
+	= f.check_box :cobra
+	%label{for: 'reason'} Reason:
+	= f.text_area :reason
+	= f.submit "Submit"
