@@ -35,13 +35,8 @@
 	= form_for Vote.new do |f|
 		- if user_signed_in?
 			= f.hidden_field :user_id, value: current_user.id
-		.choice{style: 'display:none'}
-			.chicken
-				%label{for: 'chicken'} Chicken
-				= f.check_box :chicken
-			.cobra
-				%label{for: 'cobra'} Cobra
-				= f.check_box :cobra
+		= f.hidden_field :chicken, value: false
+		= f.hidden_field :cobra, value: false
 		.reason
 			= f.text_field :reason, placeholder: 'WHY?'
 			= f.submit "GO"
