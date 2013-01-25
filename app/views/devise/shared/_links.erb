@@ -1,5 +1,7 @@
 <%- if devise_mapping.omniauthable? %>
+	<ul>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider, origin: claim_vote_path(params[:vote_id])) %><br />
+    <li><%= link_to image_tag("button-#{provider.to_s}.png"), omniauth_authorize_path(resource_name, provider, origin: claim_vote_path(params[:vote_id])) %></li>
   <% end -%>
+	</ul>
 <% end -%>

@@ -35,8 +35,6 @@
 	= form_for Vote.new do |f|
 		- if user_signed_in?
 			= f.hidden_field :user_id, value: current_user.id
-		= f.hidden_field :chicken
-		= f.hidden_field :chicken
 		.choice{style: 'display:none'}
 			.chicken
 				%label{for: 'chicken'} Chicken
@@ -45,7 +43,7 @@
 				%label{for: 'cobra'} Cobra
 				= f.check_box :cobra
 		.reason
-			= f.text_area :reason, placeholder: 'WHY?'
+			= f.text_field :reason, placeholder: 'WHY?'
 			= f.submit "GO"
 
 = render partial: 'bar'

@@ -14,8 +14,21 @@ section {
 		clear: both; 
 		width: 960px;
 		margin: 20px auto;
-		textarea { height: 50px; width: 90%; float: left; }
-		input[type='submit'] { height: 50px; width: 10%; float: left; }
+		input[type='text'] { 
+			height: 50px; 
+			width: 90%; 
+			float: left; 
+			line-height: 50px;
+			border-top-left-radius: 25px;
+			border-bottom-left-radius: 25px;
+		}
+		input[type='submit'] { 
+			height: 50px; 
+			width: 10%; 
+			float: left; 
+			border-top-right-radius: 25px;
+			border-bottom-right-radius: 25px;
+		}
 	}
 }
 section.bar {
@@ -49,7 +62,7 @@ section.stat {
 			border-radius: 20px;
 		}
 	}
-	#chicken:hover, #cobra:hover { 
+	#chicken:hover, #cobra:hover, #chicken.active, #cobra.active { 
 		cursor: pointer; 
 		span { background: black; color: white; }
 	}
@@ -84,14 +97,5 @@ section.stat {
 		.detail { width: 210px; height: 100px; margin: 20px auto; }
 	}
 }
-form { margin-top: 50px; }
-footer {
-	clear: both;
-	text-align: center; 
-	margin-top: 50px;
-	p { color: black; }
-	li { margin: 50px; float: left; }
-	span { margin-top: 20px; display: inline-block; }
-}
-footer:after, ul:after { content: '.'; visibility: hidden; clear: both; }
+form { margin: 100px; padding-bottom: 50px; }
 img { border: none; }

@@ -5,7 +5,7 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     @vote.save
-    redirect_to new_user_registration_path(vote_id: @vote.id)
+    redirect_to new_user_registration_path(vote_id: @vote.id, label: @vote.chicken ? 'cobra' : 'chicken')
   end
   
   def new
