@@ -3,23 +3,29 @@
 		%span HEALTH
 		%div
 			%span= number_to_percentage(@chicken_perc, precision: 0)
+	.buffer
 	.cobra
 		%span HEALTH
 		%div
 			%span= number_to_percentage(@cobra_perc, precision: 0)
 %section.stat
-	.chicken
-		%img{alt: 'picture of chicken'}
+	#chicken &nbsp;
 	.score
 		.title BATTLE STATS
-		.chicken
-			= number_to_percentage(@chicken_perc, precision: 0)
-			VOTES: #{@chicken_votes}
-		.cobra
-			= number_to_percentage(@cobra_perc, precision: 0)
-			VOTES: #{@cobra_votes}
-	.cobra 
-		%img{alt: 'picture of cobra'}
+		.detail
+			.chicken
+				%span.perc= number_to_percentage(@chicken_perc, precision: 0)
+				%span.votes 
+					VOTES: 
+					%br
+					= @chicken_votes
+			.cobra
+				%span.perc= number_to_percentage(@cobra_perc, precision: 0)
+				%span.votes 
+					VOTES:
+					%br
+					= @cobra_votes
+	#cobra &nbsp;
 %section{style: 'display:none', id: 'drawer'}
 	= form_for Vote.new do |f|
 		- if user_signed_in?
