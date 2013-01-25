@@ -15,7 +15,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     puts "auth: #{auth}"
     user = User.includes(:services).where(services: { provider: auth['provider'], uid: auth['uid'] }).first
     if user.nil?
-      user = User.create!(email: auth['info']['email'] || "nonce@nowhere.com", password: Digest::SHA1.hexdigest(auth['uid']))
+      user = User.create!(email: auth['info']['email'] || "#{auth['uid']}@nowhere.com", password: Digest::SHA1.hexdigest(auth['uid']))
       user.services.create(provider: auth['provider'], uid: auth['uid'], uname: auth['info']['nickname'])
     end
     sign_in user
