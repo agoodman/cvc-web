@@ -1,22 +1,36 @@
-#background {
-	z-index: 0;
-	.left, .right { width: 50%; z-index: 0; position: fixed; top: 0; bottom: 0; }
-	.left {
-		background: #f5841e;
-		left: 0;
-	}
-	.right {
-		background: #ef412f;
-		right: 0;
-	}
+@font-face { font-family: Helsinki; src: url('/assets/helsinki.ttf'); }
+* { border: 0; margin: 0; padding: 0; }
+body { 
+	background: #f5841e;
+	font-family: Helsinki;
+	font-variant: small-caps; 
+	min-width: 960px;
 }
-header, section { background: transparent; }
+#background {
+	z-index: 1;
+	width: 50%; 
+	position: fixed; 
+	top: 0; 
+	bottom: 0; 
+	background: #ef412f;
+}
+#content {
+	z-index: 2;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 header {
 	font-size: 48pt;
 	line-height: 96pt;
 	color: white;
+	width: 100%; 
+	text-align: center; 
+	margin-top: 10px; 
 	span.vs { color: white; background: url('/assets/bg-circle-black.png'); width: 141px; height: 141px; display: inline-block; }
-	.tagline { color: #2e2e2e; font-size: 24pt; clear: both; }
+	span.cobra { display: inline-block; padding-right: 45px; }
+	.tagline { color: #2e2e2e; font-size: 24pt; line-height: 24pt; clear: both; margin-top: 10px; margin-bottom: 20px; }
 }
 footer {
 	color: white;
@@ -24,3 +38,4 @@ footer {
 	height: 200px;
 }
 ul { list-style: none; }
+.fonthack { font-family: Helvetica; }

@@ -2,35 +2,42 @@
 	.chicken
 		%span HEALTH
 		%div
-			%span= number_to_percentage(@chicken_perc, precision: 0)
 	.buffer
 	.cobra
 		%span HEALTH
 		%div
-			%span= number_to_percentage(@cobra_perc, precision: 0)
 %section.stat
-	#chicken &nbsp;
+	#chicken
+		%span VOTE
 	.score
 		.title BATTLE STATS
 		.detail
 			.chicken
-				%span.perc= number_to_percentage(@chicken_perc, precision: 0)
+				%span.perc
+					= perc(@chicken_perc)
+					%span.fonthack %
 				%span.votes 
 					VOTES: 
 					%br
 					= @chicken_votes
 			.cobra
-				%span.perc= number_to_percentage(@cobra_perc, precision: 0)
+				%span.perc
+					= perc(@cobra_perc)
+					%span.fonthack %
 				%span.votes 
 					VOTES:
 					%br
 					= @cobra_votes
-	#cobra &nbsp;
+	#cobra
+		%span VOTE
+
 %section{style: 'display:none', id: 'drawer'}
 	= form_for Vote.new do |f|
 		- if user_signed_in?
 			= f.hidden_field :user_id, value: current_user.id
-		.choice
+		= f.hidden_field :chicken
+		= f.hidden_field :chicken
+		.choice{style: 'display:none'}
 			.chicken
 				%label{for: 'chicken'} Chicken
 				= f.check_box :chicken
@@ -38,7 +45,7 @@
 				%label{for: 'cobra'} Cobra
 				= f.check_box :cobra
 		.reason
-			= f.text_area :reason, placeholder: 'Reason'
-			= f.submit "Submit"
+			= f.text_area :reason, placeholder: 'WHY?'
+			= f.submit "GO"
 
 = render partial: 'bar'

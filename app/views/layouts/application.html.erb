@@ -9,30 +9,28 @@
 </head>
 <body>
 
-<!-- <div id="background">
-	<div class="left">
-	</div>
-	<div class="right">
-	</div>
-</div> -->
+<div id="background">	
+</div>
 
-<header>
-	CHICKEN 
-	<span class="vs">VS</span>
-	COBRA
-	<div class="tagline">who would win in a fight to the death?</div>
-</header>
+<div id="content">
+	<header>
+		<span class="chicken">CHICKEN</span>
+		<span class="vs">VS</span>
+		<span class="cobra">COBRA</span>
+		<div class="tagline">who would win in a fight to the death?</div>
+	</header>
 
-<%= yield %>
+	<%= yield %>
 
-<footer>
-	<span>This web application was carelessly assembled by</span>
-	<ul>
-		<li><%= link_to image_tag('logo-migrant.png', alt: 'migrant studios'), 'http://migrantstudios.com' %></li>
-		<li><%= link_to image_tag('logo-madera.png', alt: 'madera labs'), 'http://maderalabs.com' %></li>
-		<li><%= link_to image_tag('logo-mega.png', alt: 'mega'), 'http://megainc.com' %></li>
-	</ul>
-</footer>
+	<footer>
+		<span>This web application was carelessly assembled by</span>
+		<ul>
+			<li><%= link_to image_tag('logo-migrant.png', alt: 'migrant studios'), 'http://migrantstudios.com' %></li>
+			<li><%= link_to image_tag('logo-madera.png', alt: 'madera labs'), 'http://maderalabs.com' %></li>
+			<li><%= link_to image_tag('logo-mega.png', alt: 'mega'), 'http://megainc.com' %></li>
+		</ul>
+	</footer>
+</div>
 
 </body>
 </html>

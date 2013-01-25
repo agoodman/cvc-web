@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* { border: 0; margin: 0; padding: 0; }
-body { width: 960px; margin: 20px auto; background: #f5841e; font-variant: small-caps; }
-header { width: 100%; text-align: center; margin-bottom: 20px; }
 section { 
 	width: 100%; 
 	clear: both;
@@ -15,11 +12,15 @@ section {
 	}
 	.reason { 
 		clear: both; 
+		width: 960px;
+		margin: 20px auto;
 		textarea { height: 50px; width: 90%; float: left; }
 		input[type='submit'] { height: 50px; width: 10%; float: left; }
 	}
 }
 section.bar {
+	width: 960px;
+	margin: 0 auto;
 	height: 50px;
 	.buffer { width: 360px; height: 100%; float: left; }
 	.chicken, .cobra { 
@@ -33,17 +34,32 @@ section.bar {
 	}
 }
 section.stat {
+	width: 960px;
 	height: 400px;
+	margin: 0 auto;
 	#chicken, #cobra { 
 		float: left; 
+		text-align: center;
+		span { 
+			width: 100px; 
+			margin-top: 380px; 
+			padding: 20px; 
+			display: inline-block; 
+			background: white;
+			border-radius: 20px;
+		}
+	}
+	#chicken:hover, #cobra:hover { 
+		cursor: pointer; 
+		span { background: black; color: white; }
 	}
 	#chicken, #chicken:hover, #chicken.active, #cobra, #cobra:hover, #cobra.active { background-image: url('/assets/sprite.png'); width: 300px; height: 400px; }
 	#chicken { background-position: 0 0; }
-	#chicken:hover { background-position: 0 800px; }
-	#chicken.active { background-position: 0 400px; }
+	#chicken:hover { background-position: 0 801px; }
+	#chicken.active { background-position: 0 401px; }
 	#cobra { background-position: 300px 0; }
-	#cobra:hover { background-position: 300px 800px; }
-	#cobra.active { background-position: 300px 400px; }
+	#cobra:hover { background-position: 300px 801px; }
+	#cobra.active { background-position: 300px 401px; }
 	.score {
 		width: 360px; 
 		height: 400px;
@@ -68,6 +84,7 @@ section.stat {
 		.detail { width: 210px; height: 100px; margin: 20px auto; }
 	}
 }
+form { margin-top: 50px; }
 footer {
 	clear: both;
 	text-align: center; 
