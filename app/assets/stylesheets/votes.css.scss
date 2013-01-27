@@ -16,11 +16,13 @@ section {
 		margin: 20px auto;
 		input[type='text'] { 
 			height: 50px; 
-			width: 90%; 
+			width: 85%; 
 			float: left; 
 			line-height: 50px;
 			border-top-left-radius: 25px;
 			border-bottom-left-radius: 25px;
+			padding-left: 20px;
+			font-size: 20pt;
 		}
 		input[type='submit'] { 
 			height: 50px; 
