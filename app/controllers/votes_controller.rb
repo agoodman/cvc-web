@@ -3,7 +3,7 @@ class VotesController < ApplicationController
   before_filter :authenticate_user!, only: [ :claim ]
 
   def index
-    @votes = Vote.valid.order('created_at desc').limit(10)
+    @votes = Vote.valid.includes(user: :services).order('created_at desc').limit(10)
     respond_to do |format|
       format.js
     end

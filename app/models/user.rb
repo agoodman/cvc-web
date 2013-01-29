@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   def name
-    services.first.uname rescue "Anonymous Coward"
+    services.any? ? services.first.uname : "Anonymous Coward" rescue "mysterious"
   end
   
 end
