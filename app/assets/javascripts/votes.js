@@ -13,4 +13,8 @@ $(document).ready(function() {
 		$('#chicken').removeClass('active');
 		$('#cobra').addClass('active');
 	});
+	$('section.votes > span').click(function() {
+		$.getScript('/votes.js');
+		return false;
+	});
 });

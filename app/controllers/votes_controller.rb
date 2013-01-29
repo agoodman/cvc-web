@@ -2,6 +2,13 @@ class VotesController < ApplicationController
   
   before_filter :authenticate_user!, only: [ :claim ]
 
+  def index
+    @votes = Vote.valid.order('created_at desc').limit(10)
+    respond_to do |format|
+      format.js
+    end
+  end
+  
   def create
     @vote = Vote.new(params[:vote])
     @vote.save

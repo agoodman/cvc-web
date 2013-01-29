@@ -31,7 +31,7 @@
 	#cobra
 		%span VOTE
 
-%section{style: 'display:none', id: 'drawer'}
+%section#drawer{style: 'display:none'}
 	= form_for Vote.new do |f|
 		- if user_signed_in?
 			= f.hidden_field :user_id, value: current_user.id
@@ -40,5 +40,9 @@
 		.reason
 			= f.text_field :reason, placeholder: 'WHY?'
 			= f.submit "GO"
+
+%section.votes
+	%span Show Vote Stream
+	%ul{style: 'display:none'}
 
 = render partial: 'bar'

@@ -60,7 +60,7 @@ section.stat {
 		text-align: center;
 		span { 
 			width: 100px; 
-			margin-top: 380px; 
+			margin-top: 350px; 
 			padding: 20px; 
 			display: inline-block; 
 			background: white;
@@ -102,5 +102,44 @@ section.stat {
 		.detail { width: 210px; height: 100px; margin: 20px auto; }
 	}
 }
+
+section.votes {
+	width: 100%;
+	margin: 50px auto 0 auto;
+	color: white;
+	background: rgba(0,0,0,0.5);
+	ul {
+		li { 
+			width: 50%; 
+			padding-top: 20px;
+			h3, span { margin: 0 20px; display: inline-block; }
+			span.byline { display: block; }
+			span.byline, span.age { font-family: Helvetica; font-variant: normal; font-size: 9pt; }
+		}
+		li.chicken { 
+			text-align: right; 
+			margin-right: 50%;
+		}
+		li.cobra { 
+			text-align: left; 
+			margin-left: 50%;
+		}
+	}
+}
+section.votes > span {
+	width: 100%;
+	color: black;
+	background: rgba(255,255,255,0.5);
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	text-align: center;
+}
+section.votes > span:hover { 
+	color: white;
+	background: rgba(0,0,0,0.5);
+}
+
+
 form { margin: 100px; padding-bottom: 50px; }
 img { border: none; }
