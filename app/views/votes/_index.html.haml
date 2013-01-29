@@ -1,5 +1,6 @@
 - for vote in @votes
 	%li.vote{id: dom_id(vote), class: vote.chicken ? 'chicken' : 'cobra'}
+		= gravatar_image_tag(vote.user.email, alt: vote.user.email)
 		%h3= vote.reason || "undefended"
 		%span.byline= vote.user.name
 		%span.age #{time_ago_in_words(vote.created_at)} ago

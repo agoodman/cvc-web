@@ -7,6 +7,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'haml'
 gem 'jquery-rails'
+gem 'gravatar_image_tag'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
