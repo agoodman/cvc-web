@@ -8,7 +8,7 @@
 		%div
 %section.stat
 	#chicken
-		%span VOTE
+		%span SELECT
 	.score
 		.title BATTLE STATS
 		.detail
@@ -29,7 +29,7 @@
 					%br
 					= @cobra_votes
 	#cobra
-		%span VOTE
+		%span SELECT
 
 %section#drawer{style: 'display:none'}
 	= form_for Vote.new do |f|
@@ -39,10 +39,12 @@
 		= f.hidden_field :cobra, value: false
 		.reason
 			= f.text_field :reason, placeholder: 'WHY?'
-			= f.submit "GO"
+			= f.submit "VOTE"
 
 %section.votes
-	%span Show Vote Stream
+	%span.show Show Comments
+	%span.hide{style: 'display: none'} Hide Comments
 	%ul{style: 'display:none'}
+	%span.hide{style: 'display: none'} Hide Comments
 
 = render partial: 'bar'

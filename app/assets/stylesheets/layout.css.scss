@@ -24,6 +24,9 @@ body {
 	top: 0;
 	left: 0;
 }
+#container { 
+	min-width: 960px;
+}
 //#content > * { min-width: 960px; margin: 0 auto; }
 #content:after, #box:after { 
 	content: '.'; 
@@ -60,7 +63,7 @@ header {
 section.confirm { margin: 0 auto; text-align: center; color: white; }
 
 footer {
-	color: white;
+	color: #aaa;
 	background: #2e2e2e;
 	height: 200px;
 	margin-bottom: -200px;

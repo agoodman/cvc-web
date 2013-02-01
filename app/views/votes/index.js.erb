@@ -1,3 +1,11 @@
-$('section.votes > span').hide();
+try{
+
 $('section.votes > ul').append("<%= escape_javascript(render(partial: 'index')) %>");
-$('section.votes > ul').slideDown();
+$('section.votes > span.show').hide();
+$('section.votes > span.hide').show();
+
+if( $('section.votes > ul:visible').length==0 ) {
+	$('section.votes > ul').slideDown();
+}
+
+}catch(e) { alert(e); }
