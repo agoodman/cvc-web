@@ -1,6 +1,9 @@
 - for vote in @votes
 	%li.vote{id: dom_id(vote), class: vote.chicken ? 'chicken' : 'cobra'}
-		= vote.user.image_url.blank? ? gravatar_image_tag(vote.user.email) : image_tag(vote.user.image_url, width: '80px', height: '80px')
-		%h3= vote.reason.blank? ? "no answer" : vote.reason
+		- if vote.user.image_url.blank?
+			.blank
+		-else
+			= image_tag(vote.user.image_url, width: '80px', height: '80px')
+		%h3= vote.reason.blank? ? "no answer" : family_friendly(vote.reason)
 		%span.byline= vote.user.name
 		%span.age #{time_ago_in_words(vote.created_at)} ago
