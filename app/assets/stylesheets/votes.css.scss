@@ -75,9 +75,9 @@ section.stat {
 	#chicken { background-position: 0 0; }
 	#chicken:hover { background-position: 0 801px; }
 	#chicken.active { background-position: 0 401px; }
-	#cobra { background-position: 300px 0; }
-	#cobra:hover { background-position: 300px 800px; }
-	#cobra.active { background-position: 300px 400px; }
+	#cobra { background-position: 380px 0; }
+	#cobra:hover { background-position: 380px 800px; }
+	#cobra.active { background-position: 380px 400px; }
 	.score {
 		width: 360px; 
 		height: 400px;
@@ -116,19 +116,22 @@ section.votes {
 			border-top: 1px solid #888;
 			h3 { display: inline-block; width: 60%; }
 			span.byline, span.age { font-family: Helvetica; font-variant: normal; font-size: 9pt; display: block; }
-			img { width: 80px; height: 80px; margin: 0 20px; }
+			img, .blank { width: 80px; height: 80px; margin: 0 20px; }
+			.blank { background-image: url('/assets/sprite.png'); }
 		}
 		li.vote { min-height: 80px; }
 		li.chicken { 
 			text-align: right; 
 			padding-right: 50%;
-			img { float: right; }
+			img, .blank { float: right; }
 		}
 		li.cobra { 
 			text-align: left; 
 			padding-left: 50%;
-			img { float: left; }
+			img, .blank { float: left; }
 		}
+		li.chicken .blank { background-position: 80px 0; }
+		li.cobra .blank { background-position: 80px -80px; }
 	}
 }
 section.votes > span {
