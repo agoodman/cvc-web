@@ -9,10 +9,19 @@ class VotesController < ApplicationController
     end
   end
   
+  # POST /votes
+  # may or may not have authenticated user
   def create
     @vote = Vote.new(params[:vote])
-    @vote.save
-    redirect_to new_user_registration_path(vote_id: @vote.id, label: @vote.chicken ? 'cobra' : 'chicken')
+    if user_signed_in?
+      @vote.user_id = current_user.id
+      @vote.save
+      redirect_to root_path
+    else
+      @vote.user_id = nil # explicitly assign nil to prevent injection
+      @vote.save
+      redirect_to new_user_registration_path(vote_id: @vote.id, label: @vote.chicken ? 'cobra' : 'chicken')
+    end
   end
   
   def new
